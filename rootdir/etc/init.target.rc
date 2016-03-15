@@ -59,11 +59,6 @@ on boot
     chown system system /sys/devices/virtual/timed_output/vibrator/vtg_level
     chmod 0660 /sys/devices/virtual/timed_output/vibrator/vtg_level
 
-service charger /charger
-    class charger
-    group log
-    seclabel u:r:healthd:s0
-
 service vm_bms /system/bin/vm_bms
     class core
     user root
