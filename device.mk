@@ -145,5 +145,15 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/WCNSS_cfg.dat:system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_wlan_nv.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
 
+# Kryten2k35 OTAUpdates
+PRODUCT_PACKAGES += \
+    OTAUpdates
+
+#Temasek OTA dependencies
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.ota.romname=temasek-crackling \
+	ro.ota.version=$(shell date +%F | sed s@-@@g) \
+	ro.ota.manifest=https://www.dropbox.com/s/c3k774fxaeuhy4d/ota.xml?raw=1
+
 # Inherit the rest from msm8916-common
 $(call inherit-product, device/cyanogen/msm8916-common/msm8916.mk)
