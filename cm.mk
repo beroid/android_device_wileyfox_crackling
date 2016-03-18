@@ -30,3 +30,6 @@ PRODUCT_BRAND := Wileyfox
 TARGET_VENDOR := wileyfox
 TARGET_VENDOR_PRODUCT_NAME := Swift
 TARGET_VENDOR_DEVICE_NAME := crackling
+
+# Custom unofficial build tag
+TARGET_UNOFFICIAL_BUILD_ID := temasek
