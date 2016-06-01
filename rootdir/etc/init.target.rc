@@ -25,8 +25,6 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
-import init.qcom.ssr.rc
-
 on early-init
     #set non-stand-charger can used
     write /sys/module/phy_msm_usb/parameters/floated_charger_enable Y
@@ -73,11 +71,6 @@ service vm_bms /system/bin/vm_bms
     class core
     user root
     group root
-
-service mpdecision /system/bin/mpdecision --avg_comp
-    class late_start
-    user root
-    group system
 
 on charger
    wait /dev/block/bootdevice/by-name/system

@@ -17,6 +17,9 @@ $(call inherit-product, device/wileyfox/crackling/full_crackling.mk)
 # Inherit some common CM stuff.
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
+# Must define platform variant before including any common things
+TARGET_BOARD_PLATFORM_VARIANT := msm8916
+
 PRODUCT_NAME := cm_crackling
 BOARD_VENDOR := wileyfox
 PRODUCT_DEVICE := crackling
@@ -30,6 +33,3 @@ PRODUCT_BRAND := Wileyfox
 TARGET_VENDOR := wileyfox
 TARGET_VENDOR_PRODUCT_NAME := Swift
 TARGET_VENDOR_DEVICE_NAME := crackling
-
-# Custom unofficial build tag
-TARGET_UNOFFICIAL_BUILD_ID := temasek
