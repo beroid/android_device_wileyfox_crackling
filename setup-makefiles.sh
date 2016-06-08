@@ -95,6 +95,10 @@ EOF
 
 # Pick up overlay for features that depend on non-open-source files
 PRODUCT_PACKAGES += \\
+    CNEService \\
+    dpmserviceapp
+
+PRODUCT_PACKAGES += \\
     com.qualcomm.location
 
 PRODUCT_PACKAGES += \\
@@ -107,7 +111,6 @@ PRODUCT_PACKAGES += \\
     qcrilhook
 
 PRODUCT_PACKAGES += \\
-    libqct_resampler \\
     libmm-abl \\
     libmm-disp-apis
 
@@ -174,6 +177,28 @@ ifeq (\$(TARGET_DEVICE),crackling)
 ifeq (\$(QCPATH),)
 
 include \$(CLEAR_VARS)
+LOCAL_MODULE := CNEService
+LOCAL_MODULE_OWNER := $VENDOR
+LOCAL_SRC_FILES := proprietary/priv-app/CNEService/CNEService.apk
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_SUFFIX := \$(COMMON_ANDROID_PACKAGE_SUFFIX)
+LOCAL_MODULE_CLASS := APPS
+LOCAL_CERTIFICATE := platform
+LOCAL_PRIVILEGED_MODULE := true
+include \$(BUILD_PREBUILT)
+
+include \$(CLEAR_VARS)
+LOCAL_MODULE := dpmserviceapp
+LOCAL_MODULE_OWNER := $VENDOR
+LOCAL_SRC_FILES := proprietary/priv-app/dpmserviceapp/dpmserviceapp.apk
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_SUFFIX := \$(COMMON_ANDROID_PACKAGE_SUFFIX)
+LOCAL_MODULE_CLASS := APPS
+LOCAL_CERTIFICATE := platform
+LOCAL_PRIVILEGED_MODULE := true
+include \$(BUILD_PREBUILT)
+
+include \$(CLEAR_VARS)
 LOCAL_MODULE := com.qualcomm.location
 LOCAL_MODULE_OWNER := $VENDOR
 LOCAL_SRC_FILES := proprietary/priv-app/com.qualcomm.location/com.qualcomm.location.apk
@@ -192,6 +217,7 @@ LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_SUFFIX := \$(COMMON_ANDROID_PACKAGE_SUFFIX)
 LOCAL_MODULE_CLASS := APPS
 LOCAL_CERTIFICATE := platform
+LOCAL_PRIVILEGED_MODULE := true
 include \$(BUILD_PREBUILT)
 
 include \$(CLEAR_VARS)
@@ -307,18 +333,6 @@ LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 LOCAL_MODULE_PATH_64 := \$(TARGET_OUT_SHARED_LIBRARIES)
 LOCAL_MODULE_PATH_32 := \$(2ND_TARGET_OUT_SHARED_LIBRARIES)
 LOCAL_MULTILIB := both
-include \$(BUILD_PREBUILT)
-
-include \$(CLEAR_VARS)
-LOCAL_MODULE := libqct_resampler
-LOCAL_MODULE_OWNER := $VENDOR
-LOCAL_SRC_FILES := proprietary/vendor/lib/libqct_resampler.so
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_SUFFIX := .so
-LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_MODULE_PATH := \$(TARGET_OUT_VENDOR_SHARED_LIBRARIES)
-LOCAL_MULTILIB := 32
-LOCAL_PROPRIETARY_MODULE := true
 include \$(BUILD_PREBUILT)
 
 include \$(CLEAR_VARS)
