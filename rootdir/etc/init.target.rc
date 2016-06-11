@@ -65,16 +65,6 @@ on boot
     write /proc/sys/vm/swappiness 0
     write /proc/sys/vm/vfs_cache_pressure 80
 
-    # Change ownership and permission for vibrator
-    chown system system /sys/class/timed_output/vibrator/vtg_level
-    chown system system /sys/class/timed_output/vibrator/vtg_level_default
-    chown system system /sys/class/timed_output/vibrator/vtg_max
-    chown system system /sys/class/timed_output/vibrator/vtg_min
-    chmod 0644 /sys/class/timed_output/vibrator/vtg_level
-    chmod 0644 /sys/class/timed_output/vibrator/vtg_level_default
-    chmod 0644 /sys/class/timed_output/vibrator/vtg_max
-    chmod 0644 /sys/class/timed_output/vibrator/vtg_min
-
 service vm_bms /system/bin/vm_bms
     class core
     user root
