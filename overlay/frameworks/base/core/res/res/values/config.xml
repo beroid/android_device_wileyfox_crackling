@@ -102,7 +102,8 @@
     <bool name="config_dozeAfterScreenOff">true</bool>
     <integer name="config_screenBrightnessDoze">10</integer>
     <bool name="config_powerDecoupleInteractiveModeFromDisplay">true</bool>
-
+    <bool name="config_powerDecoupleAutoSuspendModeFromDisplay">true</bool>
+    
     <!-- Enable doze powersaving -->
     <bool name="config_enableAutoPowerModes">true</bool>
     
