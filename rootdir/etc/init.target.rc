@@ -29,6 +29,8 @@ on early-init
     #set non-stand-charger can used
     write /sys/module/phy_msm_usb/parameters/floated_charger_enable Y
 
+    chmod 0755 /init.kgms.sh
+    
 on boot
     # charger
     chown system system /sys/bus/i2c/drivers/lc709203/batt_capacity
@@ -93,3 +95,9 @@ service calibacc /system/bin/accelcal
 
 on property:sys.sensors.acc=*
     start calibacc
+
+service kgms /system/bin/sh /init.kgms.sh
+    class late_start
+    user root
+    group root
+    oneshot
