@@ -1,6 +1,10 @@
 # CMActions
 PRODUCT_PACKAGES += \
-    CMActions	
+    CMActions
+
+# Stlport
+PRODUCT_PACKAGES += \
+    libstlport
 
 #Enable B service adj transition by default
 PRODUCT_PROPERTY_OVERRIDES += \

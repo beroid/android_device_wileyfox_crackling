@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.cyanogenmod.settings.device;
+package com.slimroms.settings.device;
 
 interface UpdatedStateNotifier {
     public void updateState();

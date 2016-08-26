@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.cyanogenmod.settings.device;
+package com.slimroms.settings.device;
 
 import android.app.ActionBar;
 import android.app.Activity;
@@ -38,10 +38,6 @@ import android.view.MenuItem;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Set;
-
-import cyanogenmod.providers.CMSettings;
-
-import org.cyanogenmod.internal.util.ScreenType;
 
 public class TouchscreenGestureSettings extends PreferenceActivity {
 
@@ -132,11 +128,7 @@ public class TouchscreenGestureSettings extends PreferenceActivity {
     @Override
     protected void onResume() {
         super.onResume();
-
-        // If running on a phone, remove padding around the listview
-        if (!ScreenType.isTablet(this)) {
             getListView().setPadding(0, 0, 0, 0);
-        }
     }
 
     @Override

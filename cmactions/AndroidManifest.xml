@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.cyanogenmod.settings.device"
+    package="com.slimroms.settings.device"
     android:versionCode="1"
     android:versionName="1.0"
     android:sharedUserId="android.uid.system"
@@ -10,7 +10,6 @@
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
     <uses-permission android:name="android.permission.VIBRATE"/>
     <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <uses-permission android:name="cyanogenmod.permission.HARDWARE_ABSTRACTION_ACCESS" />
 
     <uses-sdk
         android:minSdkVersion="23"
@@ -18,19 +17,19 @@
 
     <application
         android:allowBackup="true"
-        android:label="@*cyanogenmod.platform:string/device_settings_app_name"
+        android:label="CMActions"
         android:persistent="true"
         android:icon="@mipmap/ic_launcher_settings"
         android:theme="@android:style/Theme.Material.Settings" >
 
-        <receiver android:name="com.cyanogenmod.settings.device.BootCompletedReceiver">
+        <receiver android:name="com.slimroms.settings.device.BootCompletedReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </receiver>
 
-        <service android:name="com.cyanogenmod.settings.device.DozeService"
+        <service android:name="com.slimroms.settings.device.DozeService"
                  android:permission="DozeService">
         </service>
 
@@ -53,7 +52,7 @@
 
         <activity
             android:name=".TouchscreenGestureSettings"
-            android:label="@*cyanogenmod.platform:string/screen_gestures_panel_title">
+            android:label="@string/gesture_panel_title">
             <intent-filter>
                 <action android:name="com.android.settings.action.EXTRA_SETTINGS" />
             </intent-filter>

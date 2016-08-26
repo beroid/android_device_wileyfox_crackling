@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-package com.cyanogenmod.settings.device;
+package com.slimroms.settings.device;
 
-import com.cyanogenmod.settings.device.ServiceWrapper.LocalBinder;
+import com.slimroms.settings.device.ServiceWrapper.LocalBinder;
 
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;

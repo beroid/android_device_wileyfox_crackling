@@ -41,7 +41,7 @@
 
     <PreferenceCategory
         android:key="category_extras"
-        android:title="@*cyanogenmod.platform:string/touchscreen_gesture_extras">
+        android:title="@string/extras_title">
 
         <SwitchPreference
             android:key="proximity_wake_enable"
